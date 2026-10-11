@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Contact - Nathan's Organization</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <a href="index.html" class="logo">
+            <img src="images/leaf_logo.png" alt="Website logo">
+            <span>Nathan's Organization</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="about.html">About & Contact</a>
+        </nav>
+    </header>
+
+    <main class="about-page">
+
+        <section class="about-section">
+            <h1>About Us</h1>
+
+            <p>
+                Welcome to Nathan's Organization, a place to keep your tasks,
+                schedule, and goals organized. Our goal is to make it easier
+                to plan your time, keep track of important deadlines, and
+                stay focused on what matters to you.
+            </p>
+        </section>
+
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Have a question or suggestion? Send us a message using the form below.</p>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Name</label>
+                    <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email">Email address</label>
+                    <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea
+                        id="contact-message"
+                        name="message"
+                        rows="6"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="create-account-button">
+                    Send Message
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>
