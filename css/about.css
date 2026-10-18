@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: #FCFDFB;
+    min-height: 64px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #20302A;
+}
+
+.logo span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.logo img{
+    width: 40px;
+    height: 40px;
+
+}
+
+.profile-link img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #20302A;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.navigation a:hover {
+    background-color: #DDEBE3;
+    color: #2F6B57;
+}
+
+body {
+    margin: 0;
+    background-color: #ECEFE9;
+    color: #20302A;
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    color: #20302A;
+}
+
+.account-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.signup-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #2f6b57;
+    color: #FCFDFB;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.signup-button:hover {
+    background-color: #245542;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #C9D3CB;
+    border-radius: 8px;
+    background-color: #FCFDFB;
+    color: #20302A;
+    font: inherit;
+}
+
+.form-group input:focus {
+    outline: 2px solid #2F6B57;
+    outline-offset: 2px;
+}
+
+.create-account-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2F6B57;
+    color: #FCFDFB;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.create-account-button:hover {
+    background-color: #245542;
+}
+
+.about-page {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.about-section,
+.contact-section {
+    background-color: #FCFDFB;
+    border: 1px solid #E1E7E0;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.about-section {
+    margin-bottom: 28px;
+}
+
+.about-section h1 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.about-section p,
+.contact-section > p {
+    color: #5E7268;
+    line-height: 1.8;
+}
+
+.contact-section h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.contact-form {
+    margin-top: 28px;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+    padding: 12px;
+    border: 1px solid #C9D3CB;
+    border-radius: 8px;
+    background-color: #FCFDFB;
+    color: #20302A;
+    font: inherit;
+}
+
+.contact-form input {
+    padding: 12px;
+    border: 1px solid #C9D3CB;
+    border-radius: 8px;
+    background-color: #FCFDFB;
+    color: #20302A;
+    font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #2F6B57;
+    outline-offset: 2px;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .about-page {
+        padding: 28px 16px;
+    }
+
+    .about-section,
+    .contact-section {
+        padding: 24px;
+    }
+
+    .about-section h1 {
+        font-size: 28px;
+    }
+}
