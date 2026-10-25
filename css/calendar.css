@@ -227,3 +227,54 @@ h1, h2, h3 {
         font-size: 11px;
     }
 }
+
+/* ---------- Clickable days and event chips ---------- */
+
+.calendar-day {
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background-color: #F4F6F2;
+}
+
+.calendar-day.today span {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #2F6B57;
+    color: #FCFDFB;
+    font-weight: 600;
+}
+
+.calendar-event {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 3px 6px;
+    border: none;
+    border-radius: 6px;
+    background-color: #DDEBE3;
+    color: #20302A;
+    font: inherit;
+    font-size: 12px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.calendar-event:hover {
+    background-color: #C9DDD1;
+}
+
+@media (max-width: 700px) {
+    .calendar-event {
+        font-size: 10px;
+        padding: 2px 3px;
+    }
+}

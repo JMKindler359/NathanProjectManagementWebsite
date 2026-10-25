@@ -1,0 +1,112 @@
+/* Popup box used by the add-task and add-event dialogs.
+   Linked from index.html and calendar.html. */
+
+.task-dialog {
+    border: 1px solid #E1E7E0;
+    border-radius: 16px;
+    padding: 28px;
+    width: 90%;
+    max-width: 420px;
+    background-color: #FCFDFB;
+    color: #20302A;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 12px 40px rgba(32, 48, 42, 0.25);
+}
+
+.task-dialog::backdrop {
+    background-color: rgba(32, 48, 42, 0.45);
+}
+
+.task-dialog h2 {
+    font-size: 22px;
+    margin: 0 0 20px;
+}
+
+.task-dialog label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 16px 0 6px;
+}
+
+.task-dialog input[type="text"],
+.task-dialog input[type="date"],
+.task-dialog input[type="time"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #C9D3CB;
+    border-radius: 8px;
+    background-color: #FCFDFB;
+    color: #20302A;
+    font: inherit;
+}
+
+.task-dialog input[type="text"]:focus,
+.task-dialog input[type="date"]:focus,
+.task-dialog input[type="time"]:focus {
+    outline: 2px solid #2F6B57;
+    outline-offset: 2px;
+}
+
+.dialog-row {
+    display: flex;
+    gap: 12px;
+}
+
+.dialog-row > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.dialog-error {
+    color: #B3402F;
+    font-size: 13px;
+    margin: 8px 0 0;
+    min-height: 18px;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.dialog-cancel {
+    padding: 10px 18px;
+    border: 1px solid #C9D3CB;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #20302A;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dialog-cancel:hover {
+    background-color: #DDEBE3;
+}
+
+.dialog-save {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2F6B57;
+    color: #FCFDFB;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dialog-save:hover {
+    background-color: #245542;
+}
+
+@media (max-width: 700px) {
+    .dialog-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}

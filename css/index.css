@@ -266,3 +266,24 @@ margin-bottom: 8px;
 .signup-button:hover {
     background-color: #245542;
 }
+
+
+/* ---------- Event list additions ---------- */
+
+.upcoming-empty {
+    color: #5E7268;
+}
+
+.event-delete {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: #8A978F;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.event-delete:hover {
+    color: #B3402F;
+}

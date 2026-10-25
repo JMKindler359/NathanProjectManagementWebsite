@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan's Organization</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dialog.css">
 </head>
 
 <body>
@@ -47,42 +48,67 @@
 
             <div class="upcoming-panel">
                 <h2>Coming up this week</h2>
-                <ul class="upcoming-list">
-                    <li>
-                        <div class="upcoming-date">
-                            <span>MON</span>
-                            <strong>12</strong>
-                        </div>
-                        <div class="upcoming-details">
-                            <h3>Finish project outline</h3>
-                            <p>9:00 AM</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="upcoming-date">
-                            <span>WED</span>
-                            <strong>14</strong>
-                        </div>
-                        <div class="upcoming-details">
-                            <h3>Review weekly schedule</h3>
-                            <p>2:00 PM</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="upcoming-date">
-                            <span>FRI</span>
-                            <strong>16</strong>
-                        </div>
-                        <div class="upcoming-details">
-                            <h3>Submit project</h3>
-                            <p>11:00 AM</p>
-                        </div>
-                    </li>
+                <ul class="upcoming-list" id="upcoming-list">
+                    <!-- Events are loaded from the database by events.js -->
                 </ul>
+                <button class="add-task-button" id="add-event-button" type="button">
+                    + Add an event
+                </button>
             </div>
         </section>
     </main>
 
+    <dialog class="task-dialog" id="task-dialog">
+        <form id="task-form" method="dialog">
+            <h2>New task</h2>
+            <input
+                type="text"
+                id="task-title"
+                placeholder="What is the task?"
+                maxlength="255"
+                autocomplete="off"
+            >
+            <p class="dialog-error" id="task-error"></p>
+            <div class="dialog-buttons">
+                <button type="button" class="dialog-cancel" id="task-cancel">Cancel</button>
+                <button type="submit" class="dialog-save">Add task</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="task-dialog" id="event-dialog">
+        <form id="event-form" method="dialog">
+            <h2>New event</h2>
+
+            <label for="event-title">Title</label>
+            <input
+                type="text"
+                id="event-title"
+                placeholder="What is happening?"
+                maxlength="255"
+                autocomplete="off"
+            >
+
+            <div class="dialog-row">
+                <div>
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date">
+                </div>
+                <div>
+                    <label for="event-time">Time (optional)</label>
+                    <input type="time" id="event-time">
+                </div>
+            </div>
+
+            <p class="dialog-error" id="event-error"></p>
+            <div class="dialog-buttons">
+                <button type="button" class="dialog-cancel" id="event-cancel">Cancel</button>
+                <button type="submit" class="dialog-save">Add event</button>
+            </div>
+        </form>
+    </dialog>
+
     <script src="tasks.js"></script>
+    <script src="events.js"></script>
 </body>
 </html>
