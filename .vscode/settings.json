@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "NetlifyDB",
+            "connectString": "postgresql://netlifydb_owner:npg_eDzU1dB8qhLI@ep-royal-frog-b54qaz07.c-7.us-east-2.db.netlify.com/netlifydb?sslmode=require"
+        }
+    ]
+}
