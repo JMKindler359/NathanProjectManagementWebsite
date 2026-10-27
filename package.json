@@ -1,0 +1,8 @@
+{
+  "name": "nathan-project-management",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@netlify/neon": "^0.1.0"
+  }
+}
