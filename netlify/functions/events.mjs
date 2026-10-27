@@ -1,6 +1,4 @@
-import { neon } from "@netlify/neon";
-
-const sql = neon();
+import { getDatabase } from "@netlify/database";
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
@@ -11,7 +9,6 @@ const json = (data, status = 200) =>
 const validDate = (v) =>
   typeof v === "string" &&
   /^\d{4}-\d{2}-\d{2}$/.test(v) &&
-  !Number.isNaN(Date.parse(v + "T00:00:00Z")) &&
   new Date(v + "T00:00:00Z").toISOString().slice(0, 10) === v;
 
 const validTime = (v) =>
@@ -25,6 +22,8 @@ export default async (req, context) => {
   }
 
   try {
+    const db = getDatabase();
+
     if (id === null) {
       if (req.method === "GET") {
         const url = new URL(req.url);
@@ -33,7 +32,7 @@ export default async (req, context) => {
         if (!validDate(start) || !validDate(end)) {
           return json({ error: "start and end must be dates like 2026-10-24." }, 400);
         }
-        const rows = await sql`
+        const rows = await db.sql`
           SELECT id, title,
                  to_char(event_date, 'YYYY-MM-DD') AS event_date,
                  to_char(event_time, 'HH24:MI')    AS event_time
@@ -56,7 +55,7 @@ export default async (req, context) => {
         if (eventTime !== null && !validTime(eventTime))
           return json({ error: "Please choose a valid time." }, 400);
 
-        const [row] = await sql`
+        const [row] = await db.sql`
           INSERT INTO events (title, event_date, event_time)
           VALUES (${title}, ${eventDate}::date, ${eventTime}::time)
           RETURNING id`;
@@ -66,7 +65,7 @@ export default async (req, context) => {
         );
       }
     } else if (req.method === "DELETE") {
-      await sql`DELETE FROM events WHERE id = ${id}`;
+      await db.sql`DELETE FROM events WHERE id = ${id}`;
       return json({ deleted: id });
     }
 
